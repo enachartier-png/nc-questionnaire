@@ -218,6 +218,7 @@ textarea.field-input{resize:vertical;min-height:120px;line-height:1.7}
 .header-right{display:flex;align-items:center;gap:0}
 </style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>emailjs.init("mq94-ujfcMRRR1A2u");</script>
 
 </head>
@@ -1526,6 +1527,12 @@ textarea.field-input{resize:vertical;min-height:120px;line-height:1.7}
   <h2 class="success-title t-html" data-en="Thank you for<br><em>trusting us.</em>" data-fr="Merci de nous<br><em>faire confiance.</em>">Thank you for<br><em>trusting us.</em></h2>
   <p class="success-body t" data-en="Your profile has been received. Our team will review it personally and be in touch within 48 hours. Your journey to lasting love begins now." data-fr="Votre profil a été reçu. Notre équipe l'examinera personnellement et vous contactera dans les 48 heures. Votre voyage vers un amour durable commence maintenant.">Your profile has been received. Our team will review it personally and be in touch within 48 hours. Your journey to lasting love begins now.</p>
   <p class="success-note t" data-en="◈  Confidential · Reviewed Personally · Within 48 Hours" data-fr="◈  Confidentiel · Examiné Personnellement · Sous 48 Heures">◈  Confidential · Reviewed Personally · Within 48 Hours</p>
+  <div style="margin-top:36px">
+    <button onclick="generatePDF()" style="background:var(--dark);color:var(--gold);border:1.5px solid var(--gold);font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;cursor:pointer;transition:.2s" onmouseover="this.style.background='var(--gold)';this.style.color='#060608'" onmouseout="this.style.background='var(--dark)';this.style.color='var(--gold)'">
+      <span class="t" data-en="⬇ Download My Profile (PDF)" data-fr="⬇ Télécharger Mon Profil (PDF)">⬇ Download My Profile (PDF)</span>
+    </button>
+    <p style="margin-top:10px;font-size:11px;color:rgba(6,6,8,.4);font-family:'Lato',sans-serif" class="t" data-en="Keep a copy of your answers." data-fr="Conservez une copie de vos réponses.">Keep a copy of your answers.</p>
+  </div>
 </div>
 </div><!-- /form-wrap -->
 <!-- Netlify Form hidden — pour capturer les soumissions et envoyer par email -->
@@ -2170,6 +2177,220 @@ function saveAndQuit() {
 }
 
 
+
+
+// ── PDF GENERATION ────────────────────────────────────────────────────────────
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  if (!jsPDF) { alert('PDF library not loaded. Please try again.'); return; }
+  
+  const data = window._submittedData || loadAnswers() || {};
+  const l = window.lang || 'en';
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  
+  const W = 210, margin = 20, lineH = 7;
+  let y = 0;
+
+  // ── COVER PAGE ──────────────────────────────────────────────────────────────
+  doc.setFillColor(6, 6, 8);
+  doc.rect(0, 0, W, 297, 'F');
+  
+  // Gold diamond
+  doc.setTextColor(201, 169, 110);
+  doc.setFontSize(20);
+  doc.text('◈', W/2, 60, {align:'center'});
+  
+  // Eyebrow
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.text(l === 'fr' ? 'PROFIL MEMBRE PRIVÉ' : 'PRIVATE MEMBER PROFILE', W/2, 75, {align:'center'});
+  
+  // Title
+  doc.setTextColor(245, 240, 232);
+  doc.setFontSize(28);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Nubian Connections', W/2, 100, {align:'center'});
+  doc.setFont('helvetica', 'italic');
+  doc.setTextColor(201, 169, 110);
+  doc.text('International', W/2, 112, {align:'center'});
+  
+  // Tagline
+  doc.setTextColor(245, 240, 232);
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Where Accomplished Men Meet Extraordinary Women', W/2, 128, {align:'center'});
+  
+  // Gold line
+  doc.setDrawColor(201, 169, 110);
+  doc.setLineWidth(0.3);
+  doc.line(60, 140, 150, 140);
+  
+  // Name
+  const name = ((data.first_name || '') + ' ' + (data.last_name || '')).trim();
+  doc.setFontSize(18);
+  doc.setTextColor(201, 169, 110);
+  doc.setFont('helvetica', 'bold');
+  doc.text(name || 'Member', W/2, 155, {align:'center'});
+  
+  // Date
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(150, 130, 100);
+  doc.text(new Date().toLocaleDateString(l === 'fr' ? 'fr-FR' : 'en-GB'), W/2, 165, {align:'center'});
+  
+  // Gold line
+  doc.line(60, 175, 150, 175);
+  
+  // Confidential
+  doc.setFontSize(8);
+  doc.setTextColor(100, 85, 60);
+  doc.text('◈   STRICTLY CONFIDENTIAL · STRICTEMENT CONFIDENTIEL', W/2, 185, {align:'center'});
+
+  // ── CONTENT PAGES ────────────────────────────────────────────────────────────
+  doc.addPage();
+  
+  const fields = [
+    {section: l==='fr'?'IDENTITÉ':'IDENTITY', items:[
+      {label:l==='fr'?'Prénom':'First Name', key:'first_name'},
+      {label:l==='fr'?'Nom':'Last Name', key:'last_name'},
+      {label:'Email', key:'email'},
+      {label:'WhatsApp', key:'whatsapp'},
+      {label:l==='fr'?'Date de naissance':'Date of Birth', key:'dob'},
+      {label:l==='fr'?'Genre':'Gender', key:'gender'},
+      {label:l==='fr'?'Ville':'City', key:'city'},
+      {label:l==='fr'?'Pays':'Country', key:'country'},
+      {label:l==='fr'?'Nationalité':'Nationality', key:'nationality'},
+      {label:l==='fr'?'Langues':'Languages', key:'languages'},
+    ]},
+    {section: l==='fr'?'PHYSIQUE':'PHYSICAL', items:[
+      {label:l==='fr'?'Taille':'Height', key:'height'},
+      {label:l==='fr'?'Poids':'Weight', key:'weight'},
+      {label:l==='fr'?'Ethnicité':'Ethnicity', key:'ethnicity'},
+      {label:l==='fr'?'Morphologie':'Build', key:'body_type'},
+      {label:'Style', key:'dress_style'},
+      {label:'Tatouages / Tattoos', key:'tattoos'},
+    ]},
+    {section: l==='fr'?'SITUATION PERSONNELLE':'PERSONAL SITUATION', items:[
+      {label:l==='fr'?'Statut marital':'Marital Status', key:'marital_status'},
+      {label:l==='fr'?'Enfants':'Children', key:'has_children'},
+      {label:l==='fr'?'Veut des enfants':'Wants children', key:'wants_children'},
+    ]},
+    {section:'RELIGION', items:[
+      {label:'Religion', key:'religion'},
+      {label:l==='fr'?'Importance':'Importance', key:'religion_importance'},
+    ]},
+    {section:l==='fr'?'VIE PROFESSIONNELLE':'PROFESSIONAL LIFE', items:[
+      {label:l==='fr'?'Études':'Education', key:'education'},
+      {label:l==='fr'?'Profession':'Occupation', key:'occupation'},
+      {label:l==='fr'?'Revenu':'Income', key:'income'},
+    ]},
+    {section:l==='fr'?'MODE DE VIE':'LIFESTYLE', items:[
+      {label:l==='fr'?'Tabac':'Smoking', key:'smoke'},
+      {label:l==='fr'?'Alcool':'Alcohol', key:'alcohol'},
+      {label:l==='fr'?'Alimentation':'Diet', key:'diet'},
+      {label:l==='fr'?'Sport':'Exercise', key:'exercise'},
+      {label:l==="fr"?"Centres d'intérêt":"Interests", key:"interests"},
+    ]},
+    {section:l==='fr'?'PERSONNALITÉ':'PERSONALITY', items:[
+      {label:l==='fr'?'Valeurs':'Values', key:'values'},
+      {label:l==='fr'?'Personnalité':'Personality', key:'personality'},
+      {label:l==='fr'?'Objectifs de vie':'Life Goals', key:'life_goals'},
+    ]},
+    {section:l==='fr'?'RELATION':'RELATIONSHIP', items:[
+      {label:l==='fr'?'Objectifs':'Goals', key:'relationship_goals'},
+      {label:l==="fr"?"Ce que je recherche":"What I am looking for", key:"what_you_seek", long:true},
+      {label:l==='fr'?'Vision vie à deux':'Life vision together', key:'vision_life_together', long:true},
+    ]},
+    {section:l==='fr'?'PARTENAIRE IDÉAL':'IDEAL PARTNER', items:[
+      {label:l==='fr'?'Âge min':'Min age', key:'partner_age_min'},
+      {label:l==='fr'?'Âge max':'Max age', key:'partner_age_max'},
+      {label:l==='fr'?'Ethnicité':'Ethnicity', key:'partner_ethnicity'},
+      {label:l==='fr'?'Religion':'Religion', key:'partner_religion'},
+      {label:'Deal-breakers', key:'dealbreakers'},
+      {label:l==='fr'?'Description':'Description', key:'ideal_partner_description', long:true},
+    ]},
+  ];
+
+  y = 20;
+  const pageH = 297;
+
+  function checkPage(needed) {
+    if (y + needed > pageH - 15) {
+      doc.addPage();
+      y = 20;
+    }
+  }
+
+  fields.forEach(function(sec) {
+    // Filter items with values
+    const validItems = sec.items.filter(function(item) { return data[item.key]; });
+    if (!validItems.length) return;
+
+    checkPage(12);
+    
+    // Section header
+    doc.setFillColor(245, 240, 232);
+    doc.rect(margin, y-4, W-margin*2, 8, 'F');
+    doc.setTextColor(100, 60, 30);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text(sec.section, margin+2, y+1);
+    y += 10;
+
+    validItems.forEach(function(item) {
+      const val = data[item.key];
+      if (!val) return;
+      
+      if (item.long) {
+        checkPage(20);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(80, 80, 80);
+        doc.text(item.label + ' :', margin, y);
+        y += 5;
+        
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(30, 30, 30);
+        const lines = doc.splitTextToSize(val, W - margin*2 - 5);
+        lines.forEach(function(line) {
+          checkPage(6);
+          doc.text(line, margin+3, y);
+          y += 5.5;
+        });
+        y += 3;
+      } else {
+        checkPage(7);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(120, 120, 120);
+        doc.text(item.label + ' :', margin, y);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(30, 30, 30);
+        const valLines = doc.splitTextToSize(val, W - margin - 80);
+        doc.text(valLines[0] || val, 80, y);
+        y += lineH;
+      }
+    });
+    y += 4;
+  });
+
+  // Footer on each page
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i);
+    doc.setFillColor(6, 6, 8);
+    doc.rect(0, 287, W, 10, 'F');
+    doc.setTextColor(100, 85, 60);
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Nubian Connections International  ·  Strictly Confidential', margin, 293);
+    doc.text('Page ' + i + ' / ' + pageCount, W - margin, 293, {align:'right'});
+  }
+
+  // Save
+  const fname = 'NubianConnections_' + (data.first_name || 'Profile') + '_' + (data.last_name || '') + '.pdf';
+  doc.save(fname);
+}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
