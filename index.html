@@ -158,8 +158,8 @@ textarea.field-input{resize:vertical;min-height:120px;line-height:1.7}
 .btn-back:hover{border-color:var(--ink);color:var(--ink)}
 .btn-fwd{font-size:10px;letter-spacing:3px;text-transform:uppercase;background:var(--burg);color:#FAF3EA;border:none;padding:16px 38px;cursor:pointer;transition:.2s;font-family:'Lato',sans-serif;font-weight:700}
 .btn-fwd:hover{background:var(--burg2)}
-.btn-save{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(6,6,8,.4);background:none;border:none;cursor:pointer;font-family:'Lato',sans-serif;padding:4px 0;text-decoration:underline;text-underline-offset:3px;transition:.2s}
-.btn-save:hover{color:var(--burg)}
+.btn-save{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--burg);background:none;border:1.5px solid rgba(122,20,40,.25);cursor:pointer;font-family:'Lato',sans-serif;padding:10px 24px;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-save:hover{background:rgba(122,20,40,.06);border-color:var(--burg)}
 .save-confirm{font-size:11px;color:var(--burg);display:none;margin-left:8px;font-family:'Lato',sans-serif}
 .nav-center{font-size:12px;color:var(--muted);text-align:center;line-height:1.6}
 .nav-center strong{display:block;color:var(--ink);font-weight:700;font-size:13px;margin-bottom:2px}
@@ -1616,6 +1616,9 @@ function setLang(l) {
   if (window._hasSavedSession) {
     document.getElementById('resumeBanner').classList.add('show');
     window._hasSavedSession = false;
+    // Restore saved answers
+    const saved = loadAnswers();
+    if (saved) restoreAnswers(saved);
   }
 }
 
@@ -2179,6 +2182,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // Si session sauvegardée, on affiche le resume banner après le choix de langue
   if (savedSection > 1) { window._hasSavedSession = true; }
   if (savedLang) { window._savedLang = savedLang; }
+  // If session saved, show resume banner immediately after lang choice
+  if (savedSection > 1 && savedLang) {
+    // Pre-select the saved language on lang screen
+    const savedBtn = document.getElementById(savedLang === 'fr' ? 'swFR' : 'swEN');
+    if (savedBtn) savedBtn.style.fontWeight = '900';
+  }
 });
 </script>
 </body>
