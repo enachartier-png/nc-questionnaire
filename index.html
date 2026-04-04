@@ -2158,10 +2158,14 @@ async function submitForm() {
 // ── SAVE & COME BACK ─────────────────────────────────────────────────────────
 function saveAndQuit() {
   saveProgress(current);
-  var confirm = document.getElementById('saveConfirm');
-  if (confirm) {
-    confirm.style.display = 'inline';
-    setTimeout(function() { confirm.style.display = 'none'; }, 3000);
+  // Show confirm message on active section
+  var activeSection = document.querySelector('.form-section.active');
+  if (activeSection) {
+    var confirmSpan = activeSection.querySelector('.save-confirm');
+    if (confirmSpan) {
+      confirmSpan.style.display = 'inline';
+      setTimeout(function() { confirmSpan.style.display = 'none'; }, 3000);
+    }
   }
 }
 
@@ -2180,7 +2184,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // TOUJOURS afficher l'écran de langue — le membre doit choisir à chaque fois
   document.getElementById('langScreen').classList.remove('hidden');
   // Si session sauvegardée, on affiche le resume banner après le choix de langue
-  if (savedSection > 1) { window._hasSavedSession = true; }
+  if (savedSection > 1 && savedLang) { window._hasSavedSession = true; }
   if (savedLang) { window._savedLang = savedLang; }
   // If session saved, show resume banner immediately after lang choice
   if (savedSection > 1 && savedLang) {
