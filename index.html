@@ -1495,8 +1495,8 @@ textarea.field-input{resize:vertical;min-height:120px;line-height:1.7}
 
   <div class="consent-box">
     <label class="consent-label">
-      <input type="checkbox" required>
-      <span class="consent-text t-html" data-en='I confirm that all information provided is accurate and truthful. I agree to the <a href="/terms">Terms &amp; Conditions</a> and <a href="/privacy">Privacy Policy</a> of Nubian Connections. I understand this information is strictly confidential.' data-fr='Je confirme que toutes les informations fournies sont exactes. J'accepte les <a href="/terms">Conditions Générales</a> et la <a href="/privacy">Politique de Confidentialité</a> de Nubian Connections.'>I confirm that all information provided is accurate and truthful. I agree to the <a href="/terms">Terms &amp; Conditions</a> and <a href="/privacy">Privacy Policy</a> of Nubian Connections.</span>
+      <input type="checkbox" id="consentCheck" required>
+      <span class="consent-text t-html" data-en='I confirm that all information provided is accurate and truthful. I agree to the <a href="https://nubianconnections.com/en/terms-and-conditions/" target="_blank">Terms &amp; Conditions</a> and <a href="https://nubianconnections.com/en/privacy-policy/" target="_blank">Privacy Policy</a> of Nubian Connections. I understand this information is strictly confidential.' data-fr="Je confirme que toutes les informations fournies sont exactes et véridiques. J'accepte les <a href='https://nubianconnections.com/en/terms-and-conditions/' target='_blank'>Conditions Générales</a> et la <a href='https://nubianconnections.com/en/privacy-policy/' target='_blank'>Politique de Confidentialité</a> de Nubian Connections. Je comprends que ces informations sont strictement confidentielles.">I confirm that all information provided is accurate and truthful. I agree to the <a href="https://nubianconnections.com/en/terms-and-conditions/" target="_blank">Terms &amp; Conditions</a> and <a href="https://nubianconnections.com/en/privacy-policy/" target="_blank">Privacy Policy</a> of Nubian Connections.</span>
     </label>
   </div>
   <div class="form-nav">
@@ -1957,6 +1957,14 @@ function collectFormData() {
 }
 
 async function submitForm() {
+  // Check consent checkbox
+  const consentBox = document.querySelector('.consent-label input[type=checkbox]');
+  if (consentBox && !consentBox.checked) {
+    consentBox.closest('.consent-box').style.border = '2px solid var(--burg)';
+    consentBox.closest('.consent-box').style.background = 'rgba(122,20,40,.12)';
+    consentBox.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
   const submitBtn = document.querySelector('[onclick="submitForm()"]');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '...'; }
 
