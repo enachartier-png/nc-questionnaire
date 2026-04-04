@@ -1359,6 +1359,12 @@ textarea.field-input{resize:vertical;min-height:120px;line-height:1.7}
 </div>
 </div>
 <div class="field-group">
+<label class="field-label"><span class="t" data-en="Describe your ideal partner" data-fr="Décrivez votre partenaire idéal·e">Describe your ideal partner</span></label>
+<p class="field-hint t" data-en="Imagine you're writing a personal ad — describe the person you're looking for: their age range, physical appearance (height, build, skin tone, style...), personality, energy, the way they carry themselves, their lifestyle, their ambitions. Be as specific as you can." data-fr="Imaginez que vous rédigez une annonce — décrivez la personne que vous recherchez : sa tranche d'âge, son apparence physique (taille, morphologie, couleur de peau, style...), sa personnalité, son énergie, sa façon d'être, son style de vie, ses ambitions. Soyez aussi précis·e que possible.">Imagine you're writing a personal ad — describe the person you're looking for: their age range, physical appearance (height, build, skin tone, style...), personality, energy, the way they carry themselves, their lifestyle, their ambitions. Be as specific as you can.</p>
+<textarea class="field-input" name="ideal_partner_description" style="min-height:180px" placeholder="e.g. I'm looking for someone between 35 and 45, confident and grounded..." data-en-ph="e.g. I'm looking for someone between 35 and 45, confident and grounded, with a warm smile and a strong sense of self..." data-fr-ph="ex. Je recherche quelqu'un entre 35 et 45 ans, posé·e et ancré·e, avec une présence chaleureuse et une vraie personnalité..."></textarea>
+</div>
+
+<div class="field-group">
 <label class="field-label"><span class="t" data-en="Other deal breakers" data-fr="Autres critères éliminatoires">Other deal breakers</span><span class="opt-note t" data-en="(Select all that apply)" data-fr="(Sélectionner tout ce qui s'applique)">(Select all that apply)</span></label>
 <div class="opts opts-auto">
   <label class="opt"><input type="checkbox" name="dbOther" value="Different religious beliefs"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Different religious beliefs" data-fr="Croyances religieuses différentes">Different religious beliefs</span></div></label>
@@ -1944,6 +1950,7 @@ function collectFormData() {
     video_link: get('videoLink'),
     occupation_other: get('occupation_other'),
     what_you_seek: getTextarea('what_you_seek'),
+    ideal_partner_description: getTextarea('ideal_partner_description'),
     vision_life_together: getTextarea('vision_life_together'),
     additional_info: getTextarea('additional_info'),
   };
@@ -2036,7 +2043,7 @@ async function submitForm() {
       location_preference: data.location_preference, relocation: data.relocation,
       must_want_children: data.must_want_children,
       age_difference: data.age_difference, partner_travel: data.partner_travel,
-      dealbreakers: data.dealbreakers, dealbreakers_other: data.dealbreakers_other, dealbreaker_strength: data.dealbreaker_strength,
+      ideal_partner_description: data.ideal_partner_description, dealbreakers: data.dealbreakers, dealbreakers_other: data.dealbreakers_other, dealbreaker_strength: data.dealbreaker_strength,
       timeline: data.timeline, availability: data.availability,
       prev_agency: data.prev_agency, referral: data.referral,
       photo_link: data.photo_link,
