@@ -2150,9 +2150,12 @@ async function submitForm() {
 
   const data = collectFormData();
   let sentOK = false;
+  let allAnswers = '';
+  try { allAnswers = buildAllAnswers(); } catch (e) { console.error(e); }
   if (!data.photo_link) {
     data.photo_link = 'Photos : EN ATTENTE — envoi proposé après le profil (WhatsApp / e-mail)';
   }
+  allAnswers += '\n\n━━ PHOTOS & VIDÉO ━━\n' + data.photo_link + (data.video_link ? '\nVidéo : ' + data.video_link : '');
   // Mode aperçu : aucun envoi réel
   if (window.NC_PREVIEW) { sentOK = true; }
 
@@ -2229,7 +2232,11 @@ async function submitForm() {
       prev_agency: data.prev_agency, referral: data.referral,
       photo_link: data.photo_link,
       video_link: data.video_link, additional_info: data.additional_info,
-      submitted_at: data.submitted_at, language: data.language
+      submitted_at: data.submitted_at, language: data.language,
+      address: data.address, dress_style: data.dress_style,
+      event_participation: data.event_participation,
+      open_partners_family: data.open_partners_family, referral_other: data.referral_other,
+      all_answers: allAnswers, message: allAnswers
     });
     sentOK = true;
   } catch (err) {
@@ -2375,6 +2382,37 @@ function markPhotos(st) {
 }
 document.addEventListener('input', e => { if (e.target && /firstName|lastName/.test(e.target.name || '')) refreshPhotoLinks(); });
 document.addEventListener('DOMContentLoaded', refreshPhotoLinks);
+
+// ── RÉCAPITULATIF LISIBLE POUR L'ÉQUIPE (toutes les réponses remplies) ───────
+function buildAllAnswers() {
+  const out = [];
+  document.querySelectorAll('.form-section').forEach(sec => {
+    const t = sec.querySelector('.section-title');
+    const title = t ? (t.getAttribute('data-fr') || t.textContent).replace(/<[^>]+>/g, '').trim() : '';
+    const lines = [];
+    const seen = new Set();
+    sec.querySelectorAll('input[name], select[name], textarea[name]').forEach(el => {
+      const n = el.name;
+      if (seen.has(n) || el.type === 'file') return;
+      seen.add(n);
+      let v = '';
+      if (el.type === 'radio' || el.type === 'checkbox') {
+        v = Array.from(sec.querySelectorAll('[name="' + n + '"]:checked')).map(e => e.value).join(', ');
+      } else { v = (el.value || '').trim(); }
+      if (!v) return;
+      let lab = '';
+      let box = el.closest('.field-group, .field-row > div, .other-field, .conditional');
+      while (box && !lab) {
+        const l = box.querySelector('.field-label .t') || box.querySelector('.field-label');
+        if (l) lab = (l.getAttribute('data-fr') || l.textContent).replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+        box = box.parentElement && box.parentElement.closest('.field-group, .field-row > div, .conditional');
+      }
+      lines.push((lab || n) + ' : ' + v);
+    });
+    if (lines.length) out.push('━━ ' + title.toUpperCase() + ' ━━\n' + lines.join('\n'));
+  });
+  return out.join('\n\n');
+}
 
 // ── SAVE & COME BACK ─────────────────────────────────────────────────────────
 function saveAndQuit() {
