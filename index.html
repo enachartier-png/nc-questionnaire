@@ -2250,7 +2250,7 @@ async function submitForm() {
       address: data.address, dress_style: data.dress_style,
       event_participation: data.event_participation,
       open_partners_family: data.open_partners_family, referral_other: data.referral_other,
-      all_answers: allAnswers, message: allAnswers
+      all_answers: allAnswers, message: allAnswers, questionnaire: 'oui'
     });
     sentOK = true;
   } catch (err) {
@@ -2262,12 +2262,11 @@ async function submitForm() {
     const confirmTemplate = lang === 'fr' ? 'template_upc0p77_fr' : 'template_upc0p77';
     const confirmParams = {
       name: data.first_name + ' ' + data.last_name,
-      first_name: data.first_name,
-      last_name: data.last_name,
       email: data.email,
       lang: lang,
       confirm_subject: lang === 'fr' ? 'Votre profil Nubian Connections est bien reçu' : 'Your Nubian Connections profile has been received',
-      confirm_text: buildConfirmText(data)
+      confirm_text: buildConfirmText(data),
+      questionnaire: 'oui'
     };
     try {
       await emailjs.send('service_54mk4qs', confirmTemplate, confirmParams);
