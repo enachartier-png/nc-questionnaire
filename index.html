@@ -480,6 +480,8 @@ body{background:var(--paper);color:var(--ink)}
 .lang-screen > .ws-veil{transition:opacity 1.2s}
 .lang-screen.ws-hold > .ws-inner{animation:none !important;opacity:0 !important;pointer-events:none}
 .lang-screen.ws-ready > .ws-inner{animation:wsIn 1.2s ease forwards !important}
+.ws-replay{display:inline-block;margin-top:14px;background:none;border:0;border-bottom:1px solid rgba(176,138,78,.5);padding:2px 0;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#86683A;cursor:pointer;transition:color .2s,border-color .2s}
+.ws-replay:hover{color:#6E1226;border-color:#6E1226}
 @media(max-width:700px){.lang-screen > .ws-hint{font-size:9.5px;letter-spacing:1.4px;padding:0 16px;bottom:22px}}
 
 @media (prefers-reduced-motion:reduce){.ws-doors{display:none}.ws-inner{animation:wsIn .3s ease forwards}.ws-bg{animation:none;transform:none}}
@@ -623,6 +625,7 @@ body{background:#F6F0E6 radial-gradient(120% 60% at 50% 0%,#FBF7F0 0%,#F3EBDD 70
       <button class="ws-btn ws-btn-en" onclick="setLang('en')">Enter — in English</button>
     </div>
     <p class="ws-note">Strictement confidentiel &nbsp;·&nbsp; Strictly confidential</p>
+    <button type="button" class="ws-replay" onclick="event.stopPropagation();ncReplay()">&#8635;&nbsp; Revoir l’ouverture &nbsp;·&nbsp; Replay</button>
   </div>
   <div class="ws-hint" aria-hidden="true">Touchez l’écran pour entrer &nbsp;·&nbsp; Tap to enter</div>
   <div class="ws-doors" id="wsDoors" aria-hidden="true">
@@ -3127,6 +3130,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
+function ncReplay(){ try { sessionStorage.removeItem('nc_doors'); } catch(e) {} location.reload(); }
 (function(){
   var ls = document.getElementById('langScreen');
   try { if (sessionStorage.getItem('nc_doors')) ls.classList.add('ws-skip'); sessionStorage.setItem('nc_doors','1'); } catch(e) {}
