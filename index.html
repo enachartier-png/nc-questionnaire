@@ -401,7 +401,7 @@ body{background:var(--paper);color:var(--ink)}
 
 
 /* ═══ Accueil : portes qui s'ouvrent sur le Domaine ═══ */
-.lang-screen{background:#0B0706 !important;background-image:none !important;overflow:hidden;perspective:1600px}
+.lang-screen{background:#0B0706 !important;background-image:none !important;overflow:hidden;perspective:2600px}
 .lang-screen > .ws-bg{position:absolute;z-index:0;inset:-4%;background-size:cover;background-position:center;transform:scale(1.12);animation:wsZoom 22s ease-out forwards}
 .lang-screen > .ws-veil{position:absolute;z-index:1;inset:0;background:radial-gradient(70% 60% at 50% 45%,rgba(18,10,8,.55) 0%,rgba(12,7,6,.82) 70%,rgba(8,5,4,.92) 100%)}
 .lang-screen > .ws-inner{position:relative;z-index:2;opacity:0;transform:translateY(14px);animation:wsIn 1.4s ease 2.6s forwards}
@@ -416,13 +416,13 @@ body{background:var(--paper);color:var(--ink)}
 .ws-door-img{position:absolute;top:0;width:100vw;height:100%;background-size:cover;background-position:center}
 .ws-door-l .ws-door-img{left:0}
 .ws-door-r .ws-door-img{right:0}
-.ws-door-l{transform-origin:left center;animation:wsOpenL 2.6s cubic-bezier(.65,0,.25,1) .9s forwards}
-.ws-door-r{transform-origin:right center;animation:wsOpenR 2.6s cubic-bezier(.65,0,.25,1) .9s forwards}
+.ws-door-l{transform-origin:left center;animation:wsOpenL 6.5s cubic-bezier(.55,0,.35,1) 2.4s forwards}
+.ws-door-r{transform-origin:right center;animation:wsOpenR 6.5s cubic-bezier(.55,0,.35,1) 2.4s forwards}
 .ws-door-mono{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:92px;height:92px;border:1px solid #C9A96E;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(18,10,8,.55);animation:wsFade .6s ease .6s forwards}
 .ws-door-mono span{font-family:'Playfair Display',serif;font-size:28px;color:#EAD7B2}
 .ws-door-mono span:last-child{font-style:italic;color:#C9A96E}
-@keyframes wsOpenL{to{transform:rotateY(-96deg);opacity:.0}}
-@keyframes wsOpenR{to{transform:rotateY(96deg);opacity:.0}}
+@keyframes wsOpenL{0%{transform:none;opacity:1}85%{opacity:1}100%{transform:rotateY(-88deg);opacity:0}}
+@keyframes wsOpenR{0%{transform:none;opacity:1}85%{opacity:1}100%{transform:rotateY(88deg);opacity:0}}
 @keyframes wsFade{to{opacity:0}}
 @keyframes wsIn{to{opacity:1;transform:none}}
 @keyframes wsZoom{to{transform:scale(1)}}
@@ -452,7 +452,7 @@ body{background:var(--paper);color:var(--ink)}
 
 .ws-logo{width:54px;margin:0 auto 26px;color:#9A7638}
 .ws-logo svg,.ws-door-logo svg{display:block;width:100%;height:auto}
-.ws-door-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70px;color:#E2C68E;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6));animation:wsFade .7s ease .55s forwards}
+.ws-door-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70px;color:#E2C68E;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6));animation:wsFade 1.2s ease 1.6s forwards}
 @media(max-width:700px){.ws-logo{width:44px;margin-bottom:20px}.ws-door-logo{width:56px}}
 
 
@@ -475,7 +475,7 @@ body{background:var(--paper);color:var(--ink)}
 
 /* La vidéo joue en entier, sans rien devant ; l'invitation apparaît ensuite */
 .lang-screen > .ws-hint{position:absolute;z-index:3;left:0;right:0;bottom:28px;text-align:center;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#4A3720;opacity:0;transition:opacity .8s}
-.lang-screen.ws-hold > .ws-hint{opacity:.85;transition-delay:3.6s}
+.lang-screen.ws-hold > .ws-hint{opacity:.85;transition-delay:6s}
 .lang-screen.ws-hold > .ws-veil{opacity:0}
 .lang-screen > .ws-veil{transition:opacity 1.2s}
 .lang-screen.ws-hold > .ws-inner{animation:none !important;opacity:0 !important;pointer-events:none}
@@ -3174,8 +3174,8 @@ function ncReplay(){ try { sessionStorage.removeItem('nc_doors'); } catch(e) {} 
     if (started) return; started = true;
     ls.classList.add('ws-go');
     if (v && ls.classList.contains('ws-hold')) {
-      setTimeout(ready, 15000);
-      setTimeout(function(){ var p = v.play(); if (p && p.catch) p.catch(ready); }, 900);
+      setTimeout(ready, 19000);
+      setTimeout(function(){ var p = v.play(); if (p && p.catch) p.catch(ready); }, 2600);
     }
   };
   var di = document.querySelector('.ws-door-img');
