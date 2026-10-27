@@ -494,6 +494,8 @@ body{background:var(--paper);color:var(--ink)}
 @keyframes ncTxt{from{opacity:0;transform:translateY(8px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
 /* Les portes restent fermées (et opaques) tant que leur image n'est pas prête */
 .ws-door{background:#2A0710}
+.lang-screen:not(.ws-go):not(.ws-skip) > .ws-bg,.lang-screen:not(.ws-go):not(.ws-skip) > .ws-video,.lang-screen:not(.ws-go):not(.ws-skip) > .ws-veil{visibility:hidden}
+.lang-screen:not(.ws-go):not(.ws-skip){background:#2A0710 !important}
 .lang-screen:not(.ws-go) .ws-door-l,.lang-screen:not(.ws-go) .ws-door-r,.lang-screen:not(.ws-go) .ws-door-logo{animation-play-state:paused !important}
 @media (prefers-reduced-motion:reduce){.lang-screen.ws-ready > .ws-inner,.lang-screen.ws-ready > .ws-inner > *{animation:none !important;opacity:1}}
 .ws-replay{display:inline-block;margin-top:14px;background:none;border:0;border-bottom:1px solid rgba(176,138,78,.5);padding:2px 0;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#86683A;cursor:pointer;transition:color .2s,border-color .2s}
