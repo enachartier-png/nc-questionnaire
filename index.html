@@ -1023,7 +1023,7 @@ body{font-size:17px;line-height:1.75;font-weight:400}
     <div class="section-eyebrow t" data-en="Section 07 of 11" data-fr="Section 07 sur 11">Section 07 of 11</div>
     <h2 class="section-title t-html" data-en="Family & <em>Social Dynamics</em>" data-fr="Famille & <em>Vie Sociale</em>">Family & <em>Social Dynamics</em></h2>
   </div>
-  <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 3–4 minutes" data-fr="Cette section prend environ 3–4 minutes">This section takes approximately 3–4 minutes</span></p>
+  <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 2–3 minutes" data-fr="Cette section prend environ 2–3 minutes">This section takes approximately 2–3 minutes</span></p>
 <div class="field-row">
 <div>
 <label class="field-label"><span class="t" data-en="Role of family in your life" data-fr="Place de la famille dans votre vie">Role of family in your life</span><span class="req">*</span></label>
@@ -1044,6 +1044,7 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
 </div>
+
 <div class="field-row">
 <div>
 <label class="field-label"><span class="t" data-en="Importance of family traditions" data-fr="Importance des traditions familiales">Importance of family traditions</span></label>
@@ -1055,14 +1056,17 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
 <div>
-<label class="field-label"><span class="t" data-en="Open to being close to partner's family?" data-fr="Ouvert·e à être proche de la famille de votre partenaire ?">Open to being close to partner's family?</span></label>
+<label class="field-label"><span class="t" data-en="What place would you like your respective families to have in your relationship?" data-fr="Quelle place souhaitez-vous pour vos familles respectives dans votre couple ?">What place would you like your respective families to have in your relationship?</span></label>
 <div class="opts opts">
-  <label class="opt"><input type="radio" name="partFam" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
-  <label class="opt"><input type="radio" name="partFam" value="No"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No" data-fr="Non">No</span></div></label>
-  <label class="opt"><input type="radio" name="partFam" value="Flexible"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Flexible" data-fr="Flexible">Flexible</span></div></label>
+  <label class="opt"><input type="radio" name="partFamRel" value="Maintains good relationships with my family"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Close, warm ties between our families" data-fr="Des liens proches et chaleureux entre nos familles">Close, warm ties between our families</span></div></label>
+  <label class="opt"><input type="radio" name="partFamRel" value="Respectful but independent"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Respectful but keeps appropriate distance" data-fr="Respectueux·se mais garde une distance appropriée">Respectful but keeps appropriate distance</span></div></label>
+  <label class="opt"><input type="radio" name="partFamRel" value="No preference"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No strong preference" data-fr="Pas de préférence particulière">No strong preference</span></div></label>
+  <label class="opt"><input type="radio" name="partFamRel" value="Other" onchange="showOther('partFamRelOther')"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Other" data-fr="Autre">Other</span></div></label>
+</div>
+<div class="other-field" id="partFamRelOther"><input type="text" name="part_fam_rel_other" placeholder="Please specify..." data-en-ph="Please specify..." data-fr-ph="Veuillez préciser..."></div>
 </div>
 </div>
-</div>
+
 <div class="field-row">
 <div>
 <label class="field-label"><span class="t" data-en="Communication style" data-fr="Style de communication">Communication style</span><span class="req">*</span></label>
@@ -1084,48 +1088,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 <div class="other-field" id="conflictOther"><input type="text" name="conflict_other" placeholder="Describe your approach..." data-en-ph="Describe your approach..." data-fr-ph="Décrivez votre approche..."></div>
 </div>
 </div>
-<div class="field-row">
-<div>
-<label class="field-label"><span class="t" data-en="Preferred partner temperament" data-fr="Tempérament préféré chez un·e partenaire">Preferred partner temperament</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="partTemp" value="Sociable"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Sociable" data-fr="Sociable">Sociable</span></div></label>
-  <label class="opt"><input type="radio" name="partTemp" value="Home-oriented"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Home-oriented" data-fr="Casanier·ère">Home-oriented</span></div></label>
-  <label class="opt"><input type="radio" name="partTemp" value="Flexible"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Flexible" data-fr="Flexible">Flexible</span></div></label>
-</div>
-</div>
-<div>
-<label class="field-label"><span class="t" data-en="Importance of friendships outside the couple" data-fr="Importance des amitiés en dehors du couple">Importance of friendships outside the couple</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="friendships" value="Essential"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Essential" data-fr="Essentiel">Essential</span></div></label>
-  <label class="opt"><input type="radio" name="friendships" value="Important"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Important" data-fr="Important">Important</span></div></label>
-  <label class="opt"><input type="radio" name="friendships" value="Moderately important"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Moderately important" data-fr="Modérément important">Moderately important</span></div></label>
-  <label class="opt"><input type="radio" name="friendships" value="Not important"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Not important" data-fr="Pas important">Not important</span></div></label>
-</div>
-</div>
-</div>
-
-<div class="divider"></div>
 
 <div class="field-row">
 <div>
-<label class="field-label"><span class="t" data-en="Social life — your preferred balance" data-fr="Vie sociale — votre équilibre préféré">Social life — your preferred balance</span></label>
+<label class="field-label"><span class="t" data-en="Social life and friendships: what balance would you like?" data-fr="Vie sociale et amitiés : quel équilibre souhaitez-vous ?">Social life and friendships: what balance would you like?</span></label>
 <div class="opts opts">
   <label class="opt"><input type="radio" name="socialBalance" value="Active social life — regular outings and events"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Active social life — regular outings and events" data-fr="Vie sociale active — sorties et événements réguliers">Active social life — regular outings and events</span></div></label>
   <label class="opt"><input type="radio" name="socialBalance" value="Balance between social activities and couple time"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Balance between social activities and couple time" data-fr="Équilibre entre vie sociale et temps en couple">Balance between social activities and couple time</span></div></label>
   <label class="opt"><input type="radio" name="socialBalance" value="Mostly couple time with limited social interactions"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Mostly couple time with limited social interactions" data-fr="Surtout du temps en couple avec peu d'interactions sociales">Mostly couple time with limited social interactions</span></div></label>
 </div>
 </div>
-<div>
-<label class="field-label"><span class="t" data-en="Attending events together — your expectation" data-fr="Participation aux événements ensemble — votre attente">Attending events together — your expectation</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="eventParticip" value="Frequently accompanies me to events"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Frequently accompanies me to events" data-fr="M'accompagne fréquemment aux événements">Frequently accompanies me to events</span></div></label>
-  <label class="opt"><input type="radio" name="eventParticip" value="Occasionally participates"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Occasionally participates" data-fr="Participe occasionnellement">Occasionally participates</span></div></label>
-  <label class="opt"><input type="radio" name="eventParticip" value="Participation is not important"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Participation is not important" data-fr="La participation n'est pas importante">Participation is not important</span></div></label>
-</div>
-</div>
-</div>
-
-<div class="field-row">
 <div>
 <label class="field-label"><span class="t" data-en="Career priority in a partner" data-fr="Priorité carrière chez un·e partenaire">Career priority in a partner</span></label>
 <div class="opts opts">
@@ -1134,36 +1106,9 @@ body{font-size:17px;line-height:1.75;font-weight:400}
   <label class="opt"><input type="radio" name="careerPriority" value="No preference"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No preference" data-fr="Pas de préférence">No preference</span></div></label>
 </div>
 </div>
-<div>
-<label class="field-label"><span class="t" data-en="Values & beliefs compatibility" data-fr="Compatibilité des valeurs et croyances">Values & beliefs compatibility</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="valuesCompat" value="Similar to mine — essential"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Similar to mine — essential" data-fr="Similaires aux miennes — essentiel">Similar to mine — essential</span></div></label>
-  <label class="opt"><input type="radio" name="valuesCompat" value="Similar preferred but different is acceptable"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Similar preferred but different is acceptable" data-fr="Similaires de préférence, mais différentes c'est acceptable">Similar preferred but different is acceptable</span></div></label>
-  <label class="opt"><input type="radio" name="valuesCompat" value="Open to different views"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Open to different views" data-fr="Ouvert·e à des points de vue différents">Open to different views</span></div></label>
-</div>
-</div>
 </div>
 
-<div class="field-row">
-<div>
-<label class="field-label"><span class="t" data-en="Political or ideological views in a partner" data-fr="Opinions politiques ou idéologiques chez un·e partenaire">Political or ideological views in a partner</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="politicalViews" value="Prefer similar views"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Prefer similar views" data-fr="Je préfère des opinions similaires">Prefer similar views</span></div></label>
-  <label class="opt"><input type="radio" name="politicalViews" value="Different views are acceptable"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Different views are acceptable" data-fr="Des opinions différentes sont acceptables">Different views are acceptable</span></div></label>
-  <label class="opt"><input type="radio" name="politicalViews" value="Not important"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Not important to me" data-fr="Pas important pour moi">Not important to me</span></div></label>
-</div>
-</div>
-<div>
-<label class="field-label"><span class="t" data-en="Partner's relationship with your family" data-fr="Relation du/de la partenaire avec votre famille">Partner's relationship with your family</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="partFamRel" value="Maintains good relationships with my family"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Maintains good relationships with my family" data-fr="Entretient de bonnes relations avec ma famille">Maintains good relationships with my family</span></div></label>
-  <label class="opt"><input type="radio" name="partFamRel" value="Respectful but independent"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Respectful but keeps appropriate distance" data-fr="Respectueux·se mais garde une distance appropriée">Respectful but keeps appropriate distance</span></div></label>
-  <label class="opt"><input type="radio" name="partFamRel" value="No preference"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No strong preference" data-fr="Pas de préférence particulière">No strong preference</span></div></label>
-  <label class="opt"><input type="radio" name="partFamRel" value="Other" onchange="showOther('partFamRelOther')"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Other" data-fr="Autre">Other</span></div></label>
-</div>
-<div class="other-field" id="partFamRelOther"><input type="text" name="part_fam_rel_other" placeholder="Please specify..." data-en-ph="Please specify..." data-fr-ph="Veuillez préciser..."></div>
-</div>
-</div>
+
   <div class="form-nav">
     <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(6)">← Back</button>
     <div class="nav-center"><strong class="t" data-en="Section 7 of 11" data-fr="Section 7 sur 11">Section 7 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
@@ -1727,7 +1672,7 @@ const NAMES = {
   en: ["Personal Details", "Your Appearance", "Faith & Spirituality", "Education & Career", "Lifestyle & Interests", "Values & Personality", "Family & Social Dynamics", "Relationship Expectations", "Your Ideal Partner", "Deal Breakers", "Complete Your Profile"],
   fr: ["Informations Personnelles", "Votre Apparence", "Foi & Spiritualité", "Éducation & Carrière", "Style de Vie & Intérêts", "Valeurs & Personnalité", "Famille & Vie Sociale", "Attentes Relationnelles", "Votre Partenaire Idéal·e", "Critères Éliminatoires", "Complétez Votre Profil"]
 };
-const TIMES = ["4–5 minutes", "1–2 minutes", "2–3 minutes", "3–4 minutes", "3–4 minutes", "4–5 minutes", "3–4 minutes", "4–5 minutes", "4–5 minutes", "2–3 minutes", "3–5 minutes"];
+const TIMES = ["4–5 minutes", "1–2 minutes", "2–3 minutes", "3–4 minutes", "3–4 minutes", "4–5 minutes", "2–3 minutes", "4–5 minutes", "4–5 minutes", "2–3 minutes", "3–5 minutes"];
 
 let lang = 'en';
 let current = 1;
