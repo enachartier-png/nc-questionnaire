@@ -2531,15 +2531,27 @@ document.addEventListener('change', e => {
 // ── SAVE & COME BACK ─────────────────────────────────────────────────────────
 function saveAndQuit() {
   saveProgress(current);
-  // Show confirm message on active section
-  var activeSection = document.querySelector('.form-section.active');
-  if (activeSection) {
-    var confirmSpan = activeSection.querySelector('.save-confirm');
-    if (confirmSpan) {
-      confirmSpan.style.display = 'inline';
-      setTimeout(function() { confirmSpan.style.display = 'none'; }, 3000);
-    }
-  }
+  const fr = lang === 'fr';
+  let box = document.getElementById('savedBox');
+  if (!box) { box = document.createElement('div'); box.id = 'savedBox'; document.body.appendChild(box); }
+  box.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(8,6,4,.6);display:flex;align-items:center;justify-content:center;padding:16px';
+  box.innerHTML =
+    '<div style="background:#F7F3EE;max-width:440px;width:100%;padding:28px 26px;border-top:3px solid #A87C3A;font-family:Lato,sans-serif;color:#1B1310">' +
+    '<p style="font-family:\'Playfair Display\',serif;font-size:24px;line-height:1.2;margin-bottom:12px">' + (fr ? 'Votre progression est <em style="color:#7A1428">enregistrée.</em>' : 'Your progress is <em style="color:#7A1428">saved.</em>') + '</p>' +
+    '<p style="font-size:16px;line-height:1.6;margin-bottom:8px">' + (fr ? 'Pour reprendre, revenez simplement sur <strong>join.nubianconnections.com</strong> depuis <strong>ce même téléphone ou ordinateur</strong>. Vos réponses vous attendront.' : 'To continue, simply come back to <strong>join.nubianconnections.com</strong> from <strong>this same phone or computer</strong>. Your answers will be waiting for you.') + '</p>' +
+    '<p style="font-size:14px;color:#5E5148;margin-bottom:20px">' + (fr ? 'Astuce : copiez le lien et envoyez-le-vous sur WhatsApp pour ne pas l’oublier.' : 'Tip: copy the link and send it to yourself on WhatsApp so you don’t forget.') + '</p>' +
+    '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
+    '<button type="button" id="copyLinkBtn" style="flex:1;min-width:150px;background:#fff;color:#7A1428;border:1.5px solid #7A1428;padding:14px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:Lato,sans-serif">' + (fr ? 'Copier le lien' : 'Copy the link') + '</button>' +
+    '<button type="button" id="continueBtn" style="flex:1;min-width:150px;background:#7A1428;color:#FAF3EA;border:none;padding:14px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:Lato,sans-serif">' + (fr ? 'Continuer maintenant' : 'Continue now') + '</button>' +
+    '</div></div>';
+  document.getElementById('continueBtn').onclick = () => box.remove();
+  box.onclick = e => { if (e.target === box) box.remove(); };
+  document.getElementById('copyLinkBtn').onclick = function () {
+    const url = 'https://join.nubianconnections.com';
+    const done = () => { this.textContent = fr ? 'Lien copié ✓' : 'Link copied ✓'; };
+    try { navigator.clipboard.writeText(url).then(done, () => { prompt(fr ? 'Copiez ce lien :' : 'Copy this link:', url); }); }
+    catch (e) { prompt(fr ? 'Copiez ce lien :' : 'Copy this link:', url); }
+  };
 }
 
 
