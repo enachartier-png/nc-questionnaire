@@ -479,7 +479,23 @@ body{background:var(--paper);color:var(--ink)}
 .lang-screen.ws-hold > .ws-veil{opacity:0}
 .lang-screen > .ws-veil{transition:opacity 1.2s}
 .lang-screen.ws-hold > .ws-inner{animation:none !important;opacity:0 !important;pointer-events:none}
-.lang-screen.ws-ready > .ws-inner{animation:wsIn 1.2s ease forwards !important}
+.lang-screen.ws-ready > .ws-inner{opacity:1;transform:none;animation:ncCard 3.4s cubic-bezier(.3,.1,.2,1) both !important}
+.lang-screen.ws-ready > .ws-inner > *{animation:ncTxt 1.6s ease both}
+.lang-screen.ws-ready > .ws-inner > :nth-child(1){animation-delay:.5s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(2){animation-delay:.8s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(3){animation-delay:1.05s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(4){animation-delay:1.3s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(5){animation-delay:1.5s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(6){animation-delay:1.7s}
+.lang-screen.ws-ready > .ws-inner > :nth-child(n+7){animation-delay:1.9s}
+@keyframes ncCard{0%{background-color:rgba(251,247,240,0);border-color:rgba(176,138,78,0);outline-color:rgba(176,138,78,0);box-shadow:0 30px 80px rgba(60,40,15,0);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}
+ 35%{background-color:rgba(251,247,240,.22);border-color:rgba(176,138,78,.35)}
+ 100%{background-color:rgba(251,247,240,.86);border-color:rgba(176,138,78,.55);outline-color:rgba(176,138,78,.25);box-shadow:0 30px 80px rgba(60,40,15,.18);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}}
+@keyframes ncTxt{from{opacity:0;transform:translateY(8px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+/* Les portes restent fermées (et opaques) tant que leur image n'est pas prête */
+.ws-door{background:#2A0710}
+.lang-screen:not(.ws-go) .ws-door-l,.lang-screen:not(.ws-go) .ws-door-r,.lang-screen:not(.ws-go) .ws-door-logo{animation-play-state:paused !important}
+@media (prefers-reduced-motion:reduce){.lang-screen.ws-ready > .ws-inner,.lang-screen.ws-ready > .ws-inner > *{animation:none !important;opacity:1}}
 .ws-replay{display:inline-block;margin-top:14px;background:none;border:0;border-bottom:1px solid rgba(176,138,78,.5);padding:2px 0;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#86683A;cursor:pointer;transition:color .2s,border-color .2s}
 .ws-replay:hover{color:#6E1226;border-color:#6E1226}
 @media(max-width:700px){.lang-screen > .ws-hint{font-size:9.5px;letter-spacing:1.4px;padding:0 16px;bottom:22px}}
@@ -3151,11 +3167,22 @@ function ncReplay(){ try { sessionStorage.removeItem('nc_doors'); } catch(e) {} 
   var done = false;
   var ready = function(){ if (done) return; done = true; ls.classList.remove('ws-hold'); ls.classList.add('ws-ready'); };
   ls.addEventListener('click', function(){ ls.classList.add('ws-skip'); ready(); }, { once:true });
+  var started = false;
+  var start = function(){
+    if (started) return; started = true;
+    ls.classList.add('ws-go');
+    if (v && ls.classList.contains('ws-hold')) {
+      setTimeout(ready, 15000);
+      setTimeout(function(){ var p = v.play(); if (p && p.catch) p.catch(ready); }, 900);
+    }
+  };
+  var di = document.querySelector('.ws-door-img');
+  var m = di && getComputedStyle(di).backgroundImage.match(/url\(["']?(.*?)["']?\)$/);
+  if (m) { var im = new Image(); im.onload = function(){ (im.decode ? im.decode() : Promise.resolve()).then(start, start); }; im.onerror = start; im.src = m[1]; } else start();
+  setTimeout(start, 3500);
   if (v && !reduce && !ls.classList.contains('ws-skip')) {
     ls.classList.add('ws-hold');
     v.addEventListener('ended', ready);
-    setTimeout(ready, 14000);
-    setTimeout(function(){ var p = v.play(); if (p && p.catch) p.catch(ready); }, 900);
   } else {
     if (v && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
     ready();
