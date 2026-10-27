@@ -1469,16 +1469,22 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 
 <div class="field-group">
-<label class="field-label"><span class="t" data-en="Other deal breakers" data-fr="Autres critères éliminatoires">Other deal breakers</span><span class="opt-note t" data-en="(Select all that apply)" data-fr="(Sélectionner tout ce qui s'applique)">(Select all that apply)</span></label>
-<div class="opts opts-auto">
-  <label class="opt"><input type="checkbox" name="dbOther" value="Different religious beliefs"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Different religious beliefs" data-fr="Croyances religieuses différentes">Different religious beliefs</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Smoking"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Smoking" data-fr="Tabagisme">Smoking</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Alcohol consumption"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Alcohol consumption" data-fr="Consommation d'alcool">Alcohol consumption</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Financial instability"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Financial instability" data-fr="Instabilité financière">Financial instability</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Different political views"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Different political views" data-fr="Opinions politiques différentes">Different political views</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Lack of family values"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Lack of family values" data-fr="Manque de valeurs familiales">Lack of family values</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Disinterest in personal development"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Disinterest in personal development" data-fr="Désintérêt pour le développement personnel">Disinterest in personal development</span></div></label>
-  <label class="opt"><input type="checkbox" name="dbOther" value="Other" onchange="showOther('dbOtherText')"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Other" data-fr="Autre">Other</span></div></label>
+<label class="field-label"><span class="t" data-en="Your deal breakers" data-fr="Vos critères éliminatoires">Your deal breakers</span><span class="req">*</span> <span class="opt-note t" data-en="(Select all that apply)" data-fr="(Sélectionnez tout ce qui s'applique)">(Select all that apply)</span></label>
+<p class="why t" data-en="Only facts we can check against the other member's profile. Values and character are assessed by our team in conversation." data-fr="Uniquement des faits que nous pouvons vérifier dans le profil de l'autre membre. Les valeurs et le caractère sont évalués par notre équipe lors de nos échanges.">Only facts we can check against the other member's profile. Values and character are assessed by our team in conversation.</p>
+<div class="opts opts-auto" id="dbOpts">
+  <label class="opt"><input type="checkbox" name="dbOther" value="Smokes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Smokes" data-fr="Fume">Smokes</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Drinks alcohol regularly"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Drinks alcohol regularly" data-fr="Consomme de l'alcool régulièrement">Drinks alcohol regularly</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Does not want children"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Does not want children" data-fr="Ne veut pas d'enfants">Does not want children</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Wants children"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Wants children" data-fr="Veut des enfants">Wants children</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Already has children"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Already has children" data-fr="A déjà des enfants">Already has children</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Is divorced or separated"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Is divorced or separated" data-fr="Est divorcé·e ou séparé·e">Is divorced or separated</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Currently married or divorce not finalised"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Currently married or divorce not finalised" data-fr="Actuellement marié·e ou divorce non finalisé">Currently married or divorce not finalised</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Does not share my religion"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Does not share my religion" data-fr="N'a pas la même religion que moi">Does not share my religion</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Has no faith or religious practice"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Has no faith or religious practice" data-fr="N'a pas de foi ou de pratique religieuse">Has no faith or religious practice</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Lives in another country and will not relocate"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Lives in another country and will not relocate" data-fr="Vit dans un autre pays et ne souhaite pas déménager">Lives in another country and will not relocate</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Long-distance relationship at first"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Long-distance relationship at first" data-fr="Relation à distance au début">Long-distance relationship at first</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="Other" onchange="showOther('dbOtherText')"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Other (please specify)" data-fr="Autre (à préciser)">Other (please specify)</span></div></label>
+  <label class="opt"><input type="checkbox" name="dbOther" value="None in particular"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="None in particular" data-fr="Aucun critère éliminatoire particulier">None in particular</span></div></label>
 </div>
 <div class="other-field" id="dbOtherText"><input type="text" name="dealbreakers_other" placeholder="Please specify..." data-en-ph="Please specify..." data-fr-ph="Veuillez préciser..."></div>
 </div>
@@ -2490,6 +2496,19 @@ function showMissing(sec, miss) {
 document.addEventListener('change', e => {
   const box = e.target.closest && e.target.closest('.field-missing');
   if (box) box.classList.remove('field-missing');
+});
+
+// ── CRITÈRES ÉLIMINATOIRES : « Aucun » exclut les autres choix ───────────────
+document.addEventListener('change', e => {
+  const el = e.target;
+  if (!el || el.name !== 'dbOther' || !el.checked) return;
+  const all = document.querySelectorAll('input[name="dbOther"]');
+  if (el.value === 'None in particular') {
+    all.forEach(c => { if (c !== el) c.checked = false; });
+    const o = document.getElementById('dbOtherText'); if (o) o.classList.remove('show');
+  } else {
+    all.forEach(c => { if (c.value === 'None in particular') c.checked = false; });
+  }
 });
 
 // ── SAVE & COME BACK ─────────────────────────────────────────────────────────
