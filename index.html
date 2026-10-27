@@ -360,7 +360,7 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 <div class="progress-banner" id="progressBanner">
   <div class="progress-top">
     <div class="progress-left">
-      <div class="progress-section-name" id="progName">Section 1 of 10</div>
+      <div class="progress-section-name" id="progName">Section 1 of 11</div>
       <div class="progress-meta" id="progMeta">Step 1 · ~5–7 min for this section</div>
     </div>
     <div class="progress-right">
@@ -386,7 +386,7 @@ body{font-size:17px;line-height:1.75;font-weight:400}
       <span class="hero-pill t" data-en="◈ Never Shared Without Consent" data-fr="◈ Jamais Partagé Sans Consentement">◈ Never Shared Without Consent</span>
     </div>
     <p style="font-family:'Lato',sans-serif;font-size:13px;color:rgba(247,243,237,.65);line-height:1.7;margin-bottom:24px;padding:14px 18px;border-left:2px solid rgba(168,124,58,.4);background:rgba(168,124,58,.06)" class="t" data-en="This questionnaire is the foundation of your member profile. Sections left incomplete reduce our ability to identify truly relevant matches for you." data-fr="Ce questionnaire est la base de votre profil membre. Les sections non complétées réduisent notre capacité à identifier des correspondances pertinentes pour vous.">This questionnaire is the foundation of your member profile. Sections left incomplete reduce our ability to identify truly relevant matches for you.</p>
-    <div class="hero-duration">⏱&nbsp;&nbsp;<span class="t" data-en="Estimated completion time:" data-fr="Durée estimée :">Estimated completion time:</span>&nbsp;<strong class="t" data-en="25–35 minutes" data-fr="25–35 minutes">25–35 minutes</strong>&nbsp;·&nbsp;<span class="t" data-en="Your progress is saved — you can return at any time" data-fr="Votre progression est sauvegardée — vous pouvez revenir à tout moment">Your progress is saved — you can return at any time</span></div>
+    <div class="hero-duration">⏱&nbsp;&nbsp;<span class="t" data-en="Estimated completion time:" data-fr="Durée estimée :">Estimated completion time:</span>&nbsp;<strong class="t" data-en="20–30 minutes" data-fr="20–30 minutes">20–30 minutes</strong>&nbsp;·&nbsp;<span class="t" data-en="Your progress is saved — you can return at any time" data-fr="Votre progression est sauvegardée — vous pouvez revenir à tout moment">Your progress is saved — you can return at any time</span></div>
   </div>
 </div>
 
@@ -401,7 +401,7 @@ body{font-size:17px;line-height:1.75;font-weight:400}
   <p class="req-note t-html" id="reqNoteTop" data-en='Fields marked <span style="color:var(--burg)">*</span> are required. Your progress is <strong style="color:var(--ink)">saved automatically</strong> — you can close this page and return at any time.' data-fr='Les champs marqués <span style="color:var(--burg)">*</span> sont obligatoires. Votre progression est <strong style="color:var(--ink)">sauvegardée automatiquement</strong> — vous pouvez fermer cette page et revenir à tout moment.'>Fields marked <span style="color:var(--burg)">*</span> are required. Your progress is <strong style="color:var(--ink)">saved automatically</strong> — you can close this page and return at any time.</p>
 <div class="form-section active" id="section1">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 01 of 10" data-fr="Section 01 sur 10">Section 01 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 01 of 11" data-fr="Section 01 sur 11">Section 01 of 11</div>
     <h2 class="section-title t-html" data-en="Personal <em>Details</em>" data-fr="Informations <em>Personnelles</em>">Personal <em>Details</em></h2>
     <p class="section-desc t" data-en="Help us understand who you are. All information is kept strictly private within our team." data-fr="Aidez-nous à vous connaître. Toutes les informations restent strictement confidentielles au sein de notre équipe.">Help us understand who you are. All information is kept strictly private within our team.</p>
   </div>
@@ -522,6 +522,54 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
 <div class="divider"></div>
+
+<div class="field-group">
+<p class="req-note t-html" style="margin-bottom:24px" data-en="The following two questions are required for eligibility and safety purposes. All answers are handled with complete discretion by our team." data-fr="Les deux questions suivantes sont requises à des fins d'éligibilité et de sécurité. Toutes les réponses sont traitées avec une totale discrétion par notre équipe.">The following two questions are required for eligibility and safety purposes. All answers are handled with complete discretion by our team.</p>
+
+<div class="field-row">
+<div>
+<label class="field-label"><span class="t" data-en="Are you currently under legal guardianship or curatorship?" data-fr="Êtes-vous actuellement sous tutelle ou curatelle ?">Are you currently under legal guardianship or curatorship?</span><span class="req">*</span></label>
+<p class="field-hint t" style="margin-bottom:10px" data-en="(i.e. a court-appointed guardian or curator manages your legal or financial affairs)" data-fr="(c.-à-d. un tuteur ou curateur désigné par un tribunal gère vos affaires juridiques ou financières)">(i.e. a court-appointed guardian or curator manages your legal or financial affairs)</p>
+<div class="opts opts-2">
+  <label class="opt"><input type="radio" name="guardianship" value="No"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No" data-fr="Non">No</span></div></label>
+  <label class="opt"><input type="radio" name="guardianship" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
+</div>
+<div class="conditional" id="guardianshipNote" style="border-left-color:var(--burg);background:rgba(122,20,40,0.06)">
+  <p style="font-size:14px;color:var(--burg);font-weight:700;margin-bottom:6px" class="t" data-en="We are unable to process your application." data-fr="Nous ne sommes pas en mesure de traiter votre candidature.">We are unable to process your application.</p>
+  <p style="font-size:13px;color:var(--ink2);line-height:1.7" class="t" data-en="Persons under legal guardianship or curatorship do not have full legal capacity to enter into a membership agreement. We are therefore unable to accept your registration as a Premium member or as a member of our network. If your situation changes in the future, we would be delighted to welcome you." data-fr="Les personnes sous tutelle ou curatelle ne disposent pas de la pleine capacité juridique pour conclure un contrat d'adhésion. Nous ne sommes donc pas en mesure d'accepter votre inscription en tant que membre Premium ou membre de notre réseau. Si votre situation change à l'avenir, nous serions ravis de vous accueillir.">Persons under legal guardianship or curatorship do not have full legal capacity to enter into a membership agreement. We are therefore unable to accept your registration as a Premium member or as a member of our network. If your situation changes in the future, we would be delighted to welcome you.</p>
+</div>
+</div>
+
+<div>
+<label class="field-label"><span class="t" data-en="Do you have a criminal record?" data-fr="Avez-vous un casier judiciaire ?">Do you have a criminal record?</span><span class="req">*</span></label>
+<p class="field-hint t" style="margin-bottom:10px" data-en="This information is strictly confidential and used solely to ensure the safety of all Premium and Community members." data-fr="Cette information est strictement confidentielle et utilisée uniquement pour assurer la sécurité de tous nos membres Premium et membres du réseau.">This information is strictly confidential and used solely to ensure the safety of all Premium and Community members.</p>
+<div class="opts opts-2">
+  <label class="opt"><input type="radio" name="criminalRecord" value="No"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No" data-fr="Non">No</span></div></label>
+  <label class="opt"><input type="radio" name="criminalRecord" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
+</div>
+<div class="conditional" id="criminalNote">
+  <label class="field-label" style="margin-top:4px"><span class="t" data-en="Please briefly describe the nature of the offence" data-fr="Veuillez décrire brièvement la nature de l'infraction">Please briefly describe the nature of the offence</span></label>
+  <textarea class="field-input" name="criminal_record_details" placeholder="Brief description..." data-en-ph="Brief description (type of offence, date, outcome)..." data-fr-ph="Brève description (nature de l'infraction, date, issue)..." style="min-height:80px"></textarea>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="form-nav">
+    <div></div>
+  <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
+    <div class="nav-center"><strong class="t" data-en="Section 1 of 11" data-fr="Section 1 sur 11">Section 1 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(2)">Continue →</button>
+  </div>
+</div>
+
+<div class="form-section" id="section2">
+  <div class="section-header">
+    <div class="section-eyebrow t" data-en="Section 02 of 11" data-fr="Section 02 sur 11">Section 02 of 11</div>
+    <h2 class="section-title t-html" data-en="Your <em>Appearance</em>" data-fr="Votre <em>Apparence</em>">Your <em>Appearance</em></h2>
+    <p class="section-desc t" data-en="A few quick questions. Your photos will do the rest." data-fr="Quelques questions rapides. Vos photos feront le reste.">A few quick questions. Your photos will do the rest.</p>
+  </div>
+  <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 1–2 minutes" data-fr="Cette section prend environ 1–2 minutes">This section takes approximately 1–2 minutes</span></p>
 <div class="field-row">
 <div>
 <label class="field-label"><span class="t" data-en="Height" data-fr="Taille">Height</span></label>
@@ -595,19 +643,6 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 <div class="field-row">
 <div>
-<label class="field-label"><span class="t" data-en="Eye Color" data-fr="Couleur des Yeux">Eye Color</span></label>
-<select class="field-input" name="eyeColor">
-  <option value="" data-en="Select" data-fr="Sélectionner">Select</option>
-  <option value="Black / Very Dark Brown" data-en="Black / Very Dark Brown" data-fr="Noir / Brun très foncé">Black / Very Dark Brown</option>
-  <option value="Brown" data-en="Brown" data-fr="Marron">Brown</option>
-  <option value="Hazel" data-en="Hazel" data-fr="Noisette">Hazel</option>
-  <option value="Green" data-en="Green" data-fr="Vert">Green</option>
-  <option value="Blue" data-en="Blue" data-fr="Bleu">Blue</option>
-  <option value="Grey" data-en="Grey" data-fr="Gris">Grey</option>
-  <option value="Other" data-en="Other" data-fr="Autre">Other</option>
-</select>
-</div>
-<div>
 <label class="field-label"><span class="t" data-en="Body Type" data-fr="Morphologie">Body Type</span></label>
 <select class="field-input" name="bodyType">
   <option value="" data-en="Select" data-fr="Sélectionner">Select</option>
@@ -622,20 +657,6 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 <div class="field-row">
 <div>
-<label class="field-label"><span class="t" data-en="Dress Style" data-fr="Style Vestimentaire">Dress Style</span></label>
-<div class="opts opts">
-  <label class="opt"><input type="radio" name="dress" value="Classic / Elegant"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Classic / Elegant" data-fr="Classique / Élégant·e">Classic / Elegant</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Smart Casual"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Smart Casual" data-fr="Smart Casual">Smart Casual</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Afrocentric / Cultural"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Afrocentric / Cultural" data-fr="Afrocentrique / Culturel·le">Afrocentric / Cultural</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Streetwear / Urban"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Streetwear / Urban" data-fr="Streetwear / Urbain·e">Streetwear / Urban</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Bohemian / Artistic"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Bohemian / Artistic" data-fr="Bohème / Artistique">Bohemian / Artistic</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Sporty / Active"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Sporty / Active" data-fr="Sportif·ve / Actif·ve">Sporty / Active</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Mix of styles"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Mix of styles" data-fr="Mélange de styles">Mix of styles</span></div></label>
-  <label class="opt"><input type="radio" name="dress" value="Other" onchange="showOther('dressOther')"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Other" data-fr="Autre">Other</span></div></label>
-</div>
-<div class="other-field" id="dressOther"><input type="text" name="dress_other" placeholder="Describe your style..." data-en-ph="Describe your style..." data-fr-ph="Décrivez votre style..."></div>
-</div>
-<div>
 <label class="field-label"><span class="t" data-en="Tattoos or Piercings?" data-fr="Tatouages ou Piercings ?">Tattoos or Piercings?</span></label>
 <div class="opts opts-2">
   <label class="opt"><input type="radio" name="tattoos" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
@@ -643,51 +664,18 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
 </div>
-<div class="divider"></div>
-
-<div class="field-group">
-<p class="req-note t-html" style="margin-bottom:24px" data-en="The following two questions are required for eligibility and safety purposes. All answers are handled with complete discretion by our team." data-fr="Les deux questions suivantes sont requises à des fins d'éligibilité et de sécurité. Toutes les réponses sont traitées avec une totale discrétion par notre équipe.">The following two questions are required for eligibility and safety purposes. All answers are handled with complete discretion by our team.</p>
-
-<div class="field-row">
-<div>
-<label class="field-label"><span class="t" data-en="Are you currently under legal guardianship or curatorship?" data-fr="Êtes-vous actuellement sous tutelle ou curatelle ?">Are you currently under legal guardianship or curatorship?</span><span class="req">*</span></label>
-<p class="field-hint t" style="margin-bottom:10px" data-en="(i.e. a court-appointed guardian or curator manages your legal or financial affairs)" data-fr="(c.-à-d. un tuteur ou curateur désigné par un tribunal gère vos affaires juridiques ou financières)">(i.e. a court-appointed guardian or curator manages your legal or financial affairs)</p>
-<div class="opts opts-2">
-  <label class="opt"><input type="radio" name="guardianship" value="No"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No" data-fr="Non">No</span></div></label>
-  <label class="opt"><input type="radio" name="guardianship" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
-</div>
-<div class="conditional" id="guardianshipNote" style="border-left-color:var(--burg);background:rgba(122,20,40,0.06)">
-  <p style="font-size:14px;color:var(--burg);font-weight:700;margin-bottom:6px" class="t" data-en="We are unable to process your application." data-fr="Nous ne sommes pas en mesure de traiter votre candidature.">We are unable to process your application.</p>
-  <p style="font-size:13px;color:var(--ink2);line-height:1.7" class="t" data-en="Persons under legal guardianship or curatorship do not have full legal capacity to enter into a membership agreement. We are therefore unable to accept your registration as a Premium member or as a member of our network. If your situation changes in the future, we would be delighted to welcome you." data-fr="Les personnes sous tutelle ou curatelle ne disposent pas de la pleine capacité juridique pour conclure un contrat d'adhésion. Nous ne sommes donc pas en mesure d'accepter votre inscription en tant que membre Premium ou membre de notre réseau. Si votre situation change à l'avenir, nous serions ravis de vous accueillir.">Persons under legal guardianship or curatorship do not have full legal capacity to enter into a membership agreement. We are therefore unable to accept your registration as a Premium member or as a member of our network. If your situation changes in the future, we would be delighted to welcome you.</p>
-</div>
-</div>
-
-<div>
-<label class="field-label"><span class="t" data-en="Do you have a criminal record?" data-fr="Avez-vous un casier judiciaire ?">Do you have a criminal record?</span><span class="req">*</span></label>
-<p class="field-hint t" style="margin-bottom:10px" data-en="This information is strictly confidential and used solely to ensure the safety of all Premium and Community members." data-fr="Cette information est strictement confidentielle et utilisée uniquement pour assurer la sécurité de tous nos membres Premium et membres du réseau.">This information is strictly confidential and used solely to ensure the safety of all Premium and Community members.</p>
-<div class="opts opts-2">
-  <label class="opt"><input type="radio" name="criminalRecord" value="No"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="No" data-fr="Non">No</span></div></label>
-  <label class="opt"><input type="radio" name="criminalRecord" value="Yes"><div class="opt-body"><span class="opt-marker"></span><span class="t" data-en="Yes" data-fr="Oui">Yes</span></div></label>
-</div>
-<div class="conditional" id="criminalNote">
-  <label class="field-label" style="margin-top:4px"><span class="t" data-en="Please briefly describe the nature of the offence" data-fr="Veuillez décrire brièvement la nature de l'infraction">Please briefly describe the nature of the offence</span></label>
-  <textarea class="field-input" name="criminal_record_details" placeholder="Brief description..." data-en-ph="Brief description (type of offence, date, outcome)..." data-fr-ph="Brève description (nature de l'infraction, date, issue)..." style="min-height:80px"></textarea>
-</div>
-</div>
-</div>
-</div>
-
-  <div class="form-nav">
-    <div></div>
+<div class="form-nav">
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(1)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 2 of 11" data-fr="Section 2 sur 11">Section 2 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <div class="nav-center"><strong class="t" data-en="Section 1 of 10" data-fr="Section 1 sur 10">Section 1 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(2)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(3)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section2">
+
+<div class="form-section" id="section3">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 02 of 10" data-fr="Section 02 sur 10">Section 02 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 03 of 11" data-fr="Section 03 sur 11">Section 03 of 11</div>
     <h2 class="section-title t-html" data-en="Faith & <em>Spirituality</em>" data-fr="Foi & <em>Spiritualité</em>">Faith & <em>Spirituality</em></h2>
     <p class="section-desc t" data-en="Understanding your spiritual beliefs helps us find a truly aligned match." data-fr="Comprendre vos croyances spirituelles nous aide à trouver une compatibilité profonde.">Understanding your spiritual beliefs helps us find a truly aligned match.</p>
   </div>
@@ -725,16 +713,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(1)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 2 of 10" data-fr="Section 2 sur 10">Section 2 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(2)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 3 of 11" data-fr="Section 3 sur 11">Section 3 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(3)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(4)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section3">
+<div class="form-section" id="section4">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 03 of 10" data-fr="Section 03 sur 10">Section 03 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 04 of 11" data-fr="Section 04 sur 11">Section 04 of 11</div>
     <h2 class="section-title t-html" data-en="Education & <em>Career</em>" data-fr="Éducation & <em>Carrière</em>">Education & <em>Career</em></h2>
   </div>
   <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 3–4 minutes" data-fr="Cette section prend environ 3–4 minutes">This section takes approximately 3–4 minutes</span></p>
@@ -849,16 +837,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(2)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 3 of 10" data-fr="Section 3 sur 10">Section 3 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(3)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 4 of 11" data-fr="Section 4 sur 11">Section 4 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(4)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(5)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section4">
+<div class="form-section" id="section5">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 04 of 10" data-fr="Section 04 sur 10">Section 04 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 05 of 11" data-fr="Section 05 sur 11">Section 05 of 11</div>
     <h2 class="section-title t-html" data-en="Lifestyle & <em>Interests</em>" data-fr="Style de Vie & <em>Intérêts</em>">Lifestyle & <em>Interests</em></h2>
   </div>
   <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 3–4 minutes" data-fr="Cette section prend environ 3–4 minutes">This section takes approximately 3–4 minutes</span></p>
@@ -949,16 +937,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 <div class="other-field" id="hobbiesOther"><input type="text" name="hobbies_other" placeholder="Please specify..." data-en-ph="Please specify..." data-fr-ph="Veuillez préciser..."></div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(3)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 4 of 10" data-fr="Section 4 sur 10">Section 4 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(4)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 5 of 11" data-fr="Section 5 sur 11">Section 5 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(5)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(6)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section5">
+<div class="form-section" id="section6">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 05 of 10" data-fr="Section 05 sur 10">Section 05 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 06 of 11" data-fr="Section 06 sur 11">Section 06 of 11</div>
     <h2 class="section-title t-html" data-en="Values & <em>Personality</em>" data-fr="Valeurs & <em>Personnalité</em>">Values & <em>Personality</em></h2>
   </div>
   <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 4–5 minutes" data-fr="Cette section prend environ 4–5 minutes">This section takes approximately 4–5 minutes</span></p>
@@ -1023,16 +1011,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 <textarea class="field-input" name="life_goals" placeholder="Career, family, travel, personal growth..." data-en-ph="Career, family, travel, personal growth..." data-fr-ph="Carrière, famille, voyages, épanouissement personnel..." style="min-height:100px"></textarea>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(4)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 5 of 10" data-fr="Section 5 sur 10">Section 5 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(5)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 6 of 11" data-fr="Section 6 sur 11">Section 6 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(6)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(7)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section6">
+<div class="form-section" id="section7">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 06 of 10" data-fr="Section 06 sur 10">Section 06 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 07 of 11" data-fr="Section 07 sur 11">Section 07 of 11</div>
     <h2 class="section-title t-html" data-en="Family & <em>Social Dynamics</em>" data-fr="Famille & <em>Vie Sociale</em>">Family & <em>Social Dynamics</em></h2>
   </div>
   <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 3–4 minutes" data-fr="Cette section prend environ 3–4 minutes">This section takes approximately 3–4 minutes</span></p>
@@ -1177,16 +1165,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(5)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 6 of 10" data-fr="Section 6 sur 10">Section 6 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(6)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 7 of 11" data-fr="Section 7 sur 11">Section 7 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(7)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(8)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section7">
+<div class="form-section" id="section8">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 07 of 10" data-fr="Section 07 sur 10">Section 07 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 08 of 11" data-fr="Section 08 sur 11">Section 08 of 11</div>
     <h2 class="section-title t-html" data-en="Relationship <em>Expectations</em>" data-fr="Attentes <em>Relationnelles</em>">Relationship <em>Expectations</em></h2>
   </div>
   <p class="section-time">&#9200;&nbsp;&nbsp;<span class="t" data-en="This section takes approximately 4–5 minutes" data-fr="Cette section prend environ 4–5 minutes">This section takes approximately 4–5 minutes</span></p>
@@ -1222,16 +1210,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(6)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 7 of 10" data-fr="Section 7 sur 10">Section 7 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(7)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 8 of 11" data-fr="Section 8 sur 11">Section 8 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(8)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(9)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section8">
+<div class="form-section" id="section9">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 08 of 10" data-fr="Section 08 sur 10">Section 08 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 09 of 11" data-fr="Section 09 sur 11">Section 09 of 11</div>
     <h2 class="section-title t-html" data-en="Your Ideal <em>Partner</em>" data-fr="Votre Partenaire <em>Idéal·e</em>">Your Ideal <em>Partner</em></h2>
     <p class="section-desc t" data-en="Be as specific as you wish. The more we know, the better we can match." data-fr="Soyez aussi précis·e que vous le souhaitez. Plus nous en savons, mieux nous pouvons vous matcher.">Be as specific as you wish. The more we know, the better we can match.</p>
   </div>
@@ -1444,16 +1432,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(7)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 8 of 10" data-fr="Section 8 sur 10">Section 8 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(8)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 9 of 11" data-fr="Section 9 sur 11">Section 9 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(9)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(10)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section9">
+<div class="form-section" id="section10">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 09 of 10" data-fr="Section 09 sur 10">Section 09 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 10 of 11" data-fr="Section 10 sur 11">Section 10 of 11</div>
     <h2 class="section-title t-html" data-en="Deal <em>Breakers</em>" data-fr="Critères <em>Éliminatoires</em>">Deal <em>Breakers</em></h2>
     <p class="section-desc t" data-en="Be honest. Your non-negotiables help us protect your time and energy." data-fr="Soyez honnête. Vos critères non négociables nous aident à protéger votre temps et votre énergie.">Be honest. Your non-negotiables help us protect your time and energy.</p>
   </div>
@@ -1519,16 +1507,16 @@ body{font-size:17px;line-height:1.75;font-weight:400}
 </div>
 </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(8)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 9 of 10" data-fr="Section 9 sur 10">Section 9 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(9)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 10 of 11" data-fr="Section 10 sur 11">Section 10 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
-    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(10)">Continue →</button>
+    <button class="btn-fwd t" data-en="Continue →" data-fr="Continuer →" onclick="goTo(11)">Continue →</button>
   </div>
 </div>
 
-<div class="form-section" id="section10">
+<div class="form-section" id="section11">
   <div class="section-header">
-    <div class="section-eyebrow t" data-en="Section 10 of 10" data-fr="Section 10 sur 10">Section 10 of 10</div>
+    <div class="section-eyebrow t" data-en="Section 11 of 11" data-fr="Section 11 sur 11">Section 11 of 11</div>
     <h2 class="section-title t-html" data-en="Complete Your <em>Profile</em>" data-fr="Complétez Votre <em>Profil</em>">Complete Your <em>Profile</em></h2>
     <p class="section-desc t" data-en="Your photos, video and final questions. This is where your profile truly comes to life." data-fr="Vos photos, vidéo et dernières questions. C'est ici que votre profil prend vraiment vie.">Photos, a short video, and a few last questions to complete your profile.</p>
   </div>
@@ -1640,8 +1628,8 @@ body{font-size:17px;line-height:1.75;font-weight:400}
     </label>
   </div>
   <div class="form-nav">
-    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(9)">← Back</button>
-    <div class="nav-center"><strong class="t" data-en="Section 10 of 10" data-fr="Section 10 sur 10">Section 10 of 10</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
+    <button class="btn-back t" data-en="← Back" data-fr="← Retour" onclick="goTo(10)">← Back</button>
+    <div class="nav-center"><strong class="t" data-en="Section 11 of 11" data-fr="Section 11 sur 11">Section 11 of 11</strong><span class="t" data-en="Progress saved automatically" data-fr="Progression sauvegardée automatiquement">Progress saved automatically</span></div>
   <div style="text-align:center;margin-top:16px"><button class="btn-save t" data-en="Save and continue later" data-fr="Sauvegarder et continuer plus tard" onclick="saveAndQuit()">Save and continue later</button><span class="save-confirm">✓ Saved / Sauvegardé ✓</span></div>
     <button class="btn-fwd t" data-en="Submit My Profile ◈" data-fr="Soumettre Mon Profil ◈" onclick="submitForm()">Submit My Profile ◈</button>
   </div>
@@ -1734,12 +1722,12 @@ body{font-size:17px;line-height:1.75;font-weight:400}
   data-en="⟵ Back" data-fr="⟵ Retour">⟵ Back</button>
 
 <script>
-const TOTAL = 10;
+const TOTAL = 11;
 const NAMES = {
-  en: ["Personal Details", "Faith & Spirituality", "Education & Career", "Lifestyle & Interests", "Values & Personality", "Family & Social Dynamics", "Relationship Expectations", "Your Ideal Partner", "Deal Breakers", "Complete Your Profile"],
-  fr: ["Informations Personnelles", "Foi & Spiritualité", "Éducation & Carrière", "Style de Vie & Intérêts", "Valeurs & Personnalité", "Famille & Vie Sociale", "Attentes Relationnelles", "Votre Partenaire Idéal·e", "Critères Éliminatoires", "Complétez Votre Profil"]
+  en: ["Personal Details", "Your Appearance", "Faith & Spirituality", "Education & Career", "Lifestyle & Interests", "Values & Personality", "Family & Social Dynamics", "Relationship Expectations", "Your Ideal Partner", "Deal Breakers", "Complete Your Profile"],
+  fr: ["Informations Personnelles", "Votre Apparence", "Foi & Spiritualité", "Éducation & Carrière", "Style de Vie & Intérêts", "Valeurs & Personnalité", "Famille & Vie Sociale", "Attentes Relationnelles", "Votre Partenaire Idéal·e", "Critères Éliminatoires", "Complétez Votre Profil"]
 };
-const TIMES = ["5–7 minutes", "2–3 minutes", "3–4 minutes", "3–4 minutes", "4–5 minutes", "3–4 minutes", "4–5 minutes", "4–5 minutes", "2–3 minutes", "3–5 minutes"];
+const TIMES = ["4–5 minutes", "1–2 minutes", "2–3 minutes", "3–4 minutes", "3–4 minutes", "4–5 minutes", "3–4 minutes", "4–5 minutes", "4–5 minutes", "2–3 minutes", "3–5 minutes"];
 
 let lang = 'en';
 let current = 1;
@@ -2359,6 +2347,7 @@ function showSendError() {
 // ── ACCOMPAGNEMENT : mot de l'équipe entre deux sections ─────────────────────
 const ENCOURAGE = {
   en: [null,
+    "Thank you. Just a few quick questions about you now.",
     "Thank you. What you share helps us truly get to know you.",
     "Beautiful. Your career and ambitions matter to the people we introduce you to.",
     "You are doing wonderfully — take your time, there are no wrong answers.",
@@ -2369,6 +2358,7 @@ const ENCOURAGE = {
     "Almost there. Being clear about what matters to you is a gift to yourself.",
     "Last step. Thank you for the time and trust you have given us."],
   fr: [null,
+    "Merci. Encore quelques questions rapides sur vous.",
     "Merci. Ce que vous partagez nous aide à vraiment vous connaître.",
     "Très bien. Votre parcours et vos ambitions comptent pour les personnes que nous vous présenterons.",
     "Vous avancez très bien. Prenez votre temps, il n'y a pas de mauvaise réponse.",
