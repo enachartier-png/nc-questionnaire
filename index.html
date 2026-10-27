@@ -2082,7 +2082,7 @@ function collectFormData() {
     partner_ethnicity: getMulti('prefEth'),
     partner_education: get('prefEdu'),
     partner_education_importance: getMulti('eduImp'),
-    partner_religion: getMulti('prefRelig'),
+    partner_religion: get('prefRelig'),
     partner_body_type: getMulti('prefBody'),
     open_tattoos: getMulti('prefTat'),
     open_divorced: getMulti('prefDiv'),
@@ -2167,7 +2167,7 @@ async function submitForm() {
   let allAnswers = '';
   try { allAnswers = buildAllAnswers(); } catch (e) { console.error(e); }
   if (!data.photo_link) {
-    data.photo_link = 'Photos : EN ATTENTE — envoi proposé après le profil (WhatsApp / e-mail)';
+    data.photo_link = 'EN ATTENTE — envoi proposé après le profil (WhatsApp / e-mail)';
   }
   allAnswers += '\n\n━━ PHOTOS & VIDÉO ━━\n' + data.photo_link + (data.video_link ? '\nVidéo : ' + data.video_link : '');
   // Mode aperçu : aucun envoi réel
