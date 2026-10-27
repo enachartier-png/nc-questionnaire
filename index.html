@@ -1980,7 +1980,7 @@ body:has(#successWrap.show) .resume-banner{display:none !important}
   <ol class="next-steps">
     <li class="t-html" data-en="<strong>We read your profile personally</strong> — every answer, with care." data-fr="<strong>Nous lisons votre profil personnellement</strong> — chaque réponse, avec attention."><strong>We read your profile personally</strong> — every answer, with care.</li>
     <li class="t-html" data-en="<strong>We contact you within 72 hours</strong> by WhatsApp or email." data-fr="<strong>Nous vous contactons sous 72 heures</strong> par WhatsApp ou par e-mail."><strong>We contact you within 72 hours</strong> by WhatsApp or email.</li>
-    <li class="t-html" data-en="<strong>We prepare your first introductions</strong> once your photos have reached us." data-fr="<strong>Nous préparons vos premières présentations</strong> dès réception de vos photos."><strong>We prepare your first introductions</strong> once your photos have reached us.</li>
+    <li class="t-html" data-en="<strong>We get to know you</strong> during a video call, then we begin the search for your partner." data-fr="<strong>Nous faisons connaissance</strong> lors d'un échange en visio, puis nous commençons la recherche de votre partenaire."><strong>We get to know you</strong> during a video call, then we begin the search for your partner.</li>
   </ol>
   <p class="success-note t" data-en="◈  Confidential · Reviewed Personally · Within 72 Hours" data-fr="◈  Confidentiel · Examiné Personnellement · Sous 72 Heures">◈  Confidential · Reviewed Personally · Within 72 Hours</p>
   <div style="margin-top:36px">
@@ -2534,7 +2534,6 @@ async function submitForm() {
       body: JSON.stringify(data),
       mode: 'no-cors'
     });
-    sentOK = true;
   } catch (err) {
     console.error('Make webhook error:', err);
   }
